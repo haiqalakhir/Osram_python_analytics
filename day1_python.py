@@ -20,3 +20,9 @@ def check_temp(temperature, min_temp=20.0, max_temp=26.0):
 temps1 = temp_readings[0]
 temps2 = temp_readings[2]
 check_temp(temps1)
+
+machine_temps = {"1AVI1805": 19, "1AVI1811": 24.8, "1AVI0225": 40, "1AVI0244": 25.0}
+
+for machine, temp in machine_temps.items():
+  status = check_temp(temp)
+  print(f"Machine {machine} temperature is {temp}°C, status: {status}")
